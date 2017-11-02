@@ -1,0 +1,112 @@
+.loginTitle{
+    width: 415px;
+    height: 50px;
+    background: url("./img/loginTitle.png")no-repeat 0 0;
+    float: left;
+    margin: 22% 5%;
+}
+.loginBoxBg{
+    width: 925px;
+    height: 456px;
+    margin: 0 auto;
+    background: rgba(2, 47, 101, 0.1);
+    position: relative;
+    margin-top: 9%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 1px 1px 5px #337ab7;
+
+}
+.html_div_style{
+    z-index: 1;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background:linear-gradient(to bottom, rgba(51,122,183,1), rgba(174,215,238,1));
+}
+.body_div_style{
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 1px 2px 15px #999;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align:-webkit-center;/*使内部的form表单水平居中*/
+    /*margin:0 auto;!*使本模块框（白色框）水平居中*!*/
+    position:absolute;
+    right: 0;
+    z-index: 11;
+}
+.login_div_style{
+    height: 456px;
+    /*min-height: 400px;*/
+    padding:35px 0px;
+}
+.registter_div_style{
+    max-height: 90%;
+    min-height: 560px;
+    margin-top:3%;
+    padding:20px 0px;
+}
+.Retrieve_Password_div_style{
+    max-height: 68%;
+    min-height: 430px;
+    margin-top:7%;
+    padding:35px 0px;
+}
+.div_logo{
+    text-align:center
+}
+.pic_area:hover{
+    cursor: pointer;
+}
+.logo-style{
+    color:#109ef7;
+    font-size: 18px;
+    margin:30px 0px;
+}
+.size-style{
+    color:#2c2c2c;
+    font-size:18px;
+    margin:20px 0px;
+}
+.checkbox-form{
+    float:left;
+}
+.login-form {
+    max-width: 300px;
+    text-align: center !important;
+    margin:0 auto;
+}
+.login-form-forgot {
+    float: right;
+}
+.login-form-forgot-register {
+    color:#109ef7;
+    float:right;
+    border:1px solid #109ef7;
+    border-radius:20px;
+    padding:0px 10px;
+    margin-top: 15px;
+    height:30px !important;
+    line-height: 30px !important;
+}
+
+.login-form-button {
+    width: 100%;
+    height:40px !important;
+    border-radius: 50px !important;
+    background-color: #109ef7 !important;
+    border-color: transparent !important;
+}
+.forgot-font{
+    color:#fff;
+    font-size: 12px;
+    text-align: center;
+    position:absolute;
+    bottom:50px;
+    left:44%;
+}
