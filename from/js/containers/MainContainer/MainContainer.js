@@ -9,7 +9,7 @@ class MainContainer extends React.Component{
     render(){
         return (
             <div>
-                这
+
                 {this.props.children}
             </div>
 
