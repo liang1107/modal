@@ -22,12 +22,12 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
   
-app.listen(3000, 'localhost', function (err, result) {
+app.listen(8080, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:3000');
+  console.log('Listening at localhost:8080');
 });
 
 /*

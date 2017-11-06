@@ -1,5 +1,6 @@
 ﻿import React from "react";
 import { Modal, Button } from 'antd';
+import {hashHistory,Link} from "react-router"
 
 import Form from './Form'
 var that=this
@@ -18,14 +19,15 @@ class HomeContainer extends React.Component{
     }
 	componentDidMount(){
 	
-		console.log(this.refs.form.state.value,"得到的value值")
+//		console.log(this.refs.form.state.value,"得到的value值")
 		console.log(this.state.value)
 		
 	}
     render(){
+    	var title="用户名二"
     	var data={layout:'horizontal',datepicker:"不为空",
     	inputtext:[
-    	{label:'用户名',required:"不为空",message:"请输入用户名",placeholder:"请输入用户名",obgkey:'username',type:"text"},
+    	{label:title,required:"不为空",message:"请输入用户名",placeholder:"请输入用户名",obgkey:'username',type:"text"},
     	{label:'账户',required:"",message:"请输入账户",placeholder:"请输入账户",obgkey:'1',type:"password",},
     	{label:'textswitch',required:"",message:"请输入账户",obgkey:'switch',type:"switch",},
     	{label:'数字',required:"",message:"请填写数字",placeholder:"请填写数字",obgkey:'num',type:"number",min:1,max:100},
@@ -59,6 +61,7 @@ class HomeContainer extends React.Component{
         return (
             <div>
                 <Button type="primary" onClick={this.showModal.bind(this)}>Open</Button>
+                <Button type="primary" onClick={this.showModal1.bind(this)}>Personal</Button>
                 <Modal
                     title="表单"
                     visible={this.state.visible}
@@ -76,9 +79,23 @@ class HomeContainer extends React.Component{
     }
     showModal(){
         console.log("展示模态框")
-        this.setState({
-            visible:true
-        })
+        console.log(this.props)
+        const {router} =this.props
+        router.push({pathname:"IndividualService",query:{wudi:"123"}})
+//       hashHistory.push({
+//         pathname:"/IndividualService",
+//         query:{
+//             pay:"pay"
+//         }
+//     })
+
+//      this.setState({
+//          visible:true
+//      })
+    }
+    showModal1(){
+    	const {router} =this.props
+        router.push({pathname:"Personal",query:{wudi:"123"}})
     }
     handleCancel(){
         console.log("关闭")
