@@ -53,6 +53,33 @@ class Form1  extends Component{
 		    			var arr1=(
 		    				<TextArea rows={zhi[i].rows}  cols={zhi[i].cols}/>
 		    			)
+		    		}else if(zhi[i].type=="Select"){
+		    			var opt=[]
+			    		for (let j in zhi[i].Option){
+			    			
+			    			opt.push(
+			    				<Option key={j} value={zhi[i].Option[j].value}>{zhi[i].Option[j].text}</Option>
+			    			)
+			    		}
+		    			var arr1=(
+		    				<Select mode={zhi[i].mode} placeholder={zhi[i].placeholder}>
+			              {opt}
+			           </Select>
+		    			)
+		    		}else if(zhi[i].type=="Radio"){
+		    			var opt1=[]
+			    		for (let j in zhi[i].Option){
+			    			
+			    			opt1.push(
+			    				<Radio key={j} value={zhi[i].Option[j].value}>{zhi[i].Option[j].text}</Radio>
+			    				
+			    			)
+			    		}
+		    			var arr1=(
+		    				<RadioGroup >
+			              {opt1}
+			          </RadioGroup>
+		    			)
 		    		}
 		    		else{//文本输入
 		    			var arr1=(
@@ -63,11 +90,11 @@ class Form1  extends Component{
 		    		arr.push(
 		    			<FormItem
 				        {...formItemLayout}
-				        label={zhi[i].label}
+				        label={zhi[i].title}
 				        key={i}
 				        hasFeedback 
 			        >
-			          {getFieldDecorator(`${zhi[i].obgkey}`
+			          {getFieldDecorator(`${zhi[i].dataIndex}`
 											
 			          	,(zhi[i].type=="switch")?{ valuePropName: 'checked' }:{
 			            rules: [{ required: `${zhi[i].required}`, message: `${zhi[i].message}` }],
@@ -78,76 +105,6 @@ class Form1  extends Component{
 			        </FormItem>
 		    		)
 		    	}		    	
-		    }
-		    //建立select，DOM节点
-		    if(data.Select){
-		    	var sele=data.Select
-		    	var SelectDom=[];
-		    	
-		    	for (var i in sele){
-		    		var opt=[]
-		    		for (var j in sele[i].Option){
-		    			
-		    			opt.push(
-		    				<Option key={j} value={sele[i].Option[j].value}>{sele[i].Option[j].text}</Option>
-		    			)
-		    		}
-		    		SelectDom.push(
-		    			<FormItem
-			          {...formItemLayout}
-			          label={sele[i].label}
-			          key={i}
-			        >
-			          {getFieldDecorator(`${sele[i].obgkey}`, {
-			            rules: [
-			              { required: `${sele[i].required}`, message: `${sele[i].message}` },
-			            ],
-			          })(
-			            <Select mode={sele[i].mode} placeholder={sele[i].placeholder}>
-			              {opt}
-			            </Select>
-			          )}
-			        </FormItem>
-		    			
-		    		)
-		    	}
-		    	
-		    }
-		    
-		    //建立radio-group，DOM
-		     if(data.radio){
-		    	var sele=data.radio
-		    	var radioDom=[];
-		    	
-		    	for (var i in sele){
-		    		var opt=[]
-		    		for (var j in sele[i].Option){
-		    			
-		    			opt.push(
-		    				<Radio key={j} value={sele[i].Option[j].value}>{sele[i].Option[j].text}</Radio>
-		    				
-		    			)
-		    		}
-		    		radioDom.push(
-		    			<FormItem
-			          {...formItemLayout}
-			          label={sele[i].label}
-			          key={i}
-			        >
-			          {getFieldDecorator(`${sele[i].obgkey}`, {
-			            rules: [
-			              { required: `${sele[i].required}`, message: `${sele[i].message}` },
-			            ],
-			          })(
-			            <RadioGroup >
-			              {opt}
-			            </RadioGroup>
-			          )}
-			        </FormItem>
-		    			
-		    		)
-		    	}
-		    	
 		    }
 		     if(data.datepicker){
 		     	var time=[
@@ -172,9 +129,8 @@ class Form1  extends Component{
 			        
 			        {arr}
 			        
-			        {SelectDom}
+			       
 			        
-           			{radioDom}
            			
 			      	{time}
 			        

@@ -27,36 +27,29 @@ class HomeContainer extends React.Component{
     	var title="用户名二"
     	var data={layout:'horizontal',datepicker:"不为空",
     	inputtext:[
-    	{label:title,required:"不为空",message:"请输入用户名",placeholder:"请输入用户名",obgkey:'username',type:"text"},
-    	{label:'账户',required:"",message:"请输入账户",placeholder:"请输入账户",obgkey:'1',type:"password",},
-    	{label:'textswitch',required:"",message:"请输入账户",obgkey:'switch',type:"switch",},
-    	{label:'数字',required:"",message:"请填写数字",placeholder:"请填写数字",obgkey:'num',type:"number",min:1,max:100},
-    	{label:'文本框',required:"",message:"文本",placeholder:"文本",obgkey:'textarea',type:"textarea",cols:'4',rows:'4',},
-    	],
-    	Select:[
-    	{label:'城市',required:"true",message:"请选择城市",placeholder:"请选择城市",obgkey:'select',
+    	{title:title,required:"不为空",message:"请输入用户名",placeholder:"请输入用户名",dataIndex:'username',type:"text"},
+    	{title:'账户',required:"",message:"请输入账户",placeholder:"请输入账户",dataIndex:'1',type:"password",},
+    	{title:'textswitch',required:"",message:"请输入账户",dataIndex:'switch',type:"switch",},
+    	{title:'数字',required:"",message:"请填写数字",placeholder:"请填写数字",dataIndex:'num',type:"number",min:1,max:100},
+    	{title:'文本框',required:"",message:"文本",placeholder:"文本",dataIndex:'textarea',type:"textarea",cols:'4',rows:'4',},
+    	{title:'城市',required:"true",message:"请选择城市",placeholder:"请选择城市",dataIndex:'select',type:"Select",
     	Option:[{value:'china',text:'中国'},{value:'use',text:'美国'},{value:'guba',text:"古巴"}]
     	},
-    	{label:'水果',required:"",message:"请选择水果",placeholder:"请选择水果",obgkey:'selectapple',mode:"multiple",
+    	{title:'水果',required:"",message:"请选择水果",placeholder:"请选择水果",dataIndex:'selectapple',mode:"multiple",type:"Select",
     	Option:[{value:'apple',text:'苹果'},{value:'orange',text:'橘子'},{value:'li',text:"梨"}]
-    	}
-    	
-    	],
-    	radio:[
-    	{label:'城市1',required:"true",message:"请选择城市",placeholder:"请选择城市",obgkey:'radio',
+	    },
+	    {title:'城市1',required:"true",message:"请选择城市",placeholder:"请选择城市",dataIndex:'radio',type:'Radio',
     	Option:[{value:'china',text:'中国'},{value:'use',text:'美国'},{value:'guba',text:"古巴"}]
-    	},
-    	{label:'水果1',required:"",message:"请选择水果",placeholder:"请选择水果",obgkey:'radio2',
-    	Option:[{value:'apple',text:'苹果'},{value:'orange',text:'橘子'},{value:'li',text:"梨"}]}
-    	],
-    	
     	}
+    	],}
     	var chu={
     		username:'初始化',
     		"1":"123123",
     		switch:true,
     		num:23,
-    		textarea:'初始化的内容'
+    		textarea:'初始化的内容',
+    		select:'use',
+    		radio:'china'
     	}
         return (
             <div>
