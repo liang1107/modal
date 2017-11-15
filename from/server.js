@@ -1,4 +1,4 @@
-var path = require('path');
+﻿var path = require('path');
 var webpack = require('webpack');
 var express = require('express');
 var config = require('./webpack.config');
@@ -22,12 +22,12 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
   
-app.listen(8080, 'localhost', function (err, result) {
+app.listen(8081, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:8080');
+  console.log('Listening at localhost:8081');
 });
 
 /*

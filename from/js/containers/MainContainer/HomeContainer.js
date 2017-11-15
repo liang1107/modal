@@ -3,6 +3,9 @@ import { Modal, Button } from 'antd';
 import {hashHistory,Link} from "react-router"
 
 import Form from './Form'
+import BarReact from './BarReact'
+import {Map,Marker,InfoWindow, NavigationControl, MapTypeControl, ScaleControl, OverviewMapControl} from 'react-bmap'
+
 var that=this
 class HomeContainer extends React.Component{
 	
@@ -51,10 +54,76 @@ class HomeContainer extends React.Component{
     		select:'use',
     		radio:'china'
     	}
+    	var op={
+			    color: ['#003366', '#006699', '#4cabce', '#e5323e'],
+			    tooltip: {
+			        trigger: 'axis',
+			        axisPointer: {
+			            type: 'shadow'
+			        }
+			    },
+			    legend: {
+			        data: ['Forest', 'Steppe', 'Desert', 'Wetland']
+			    },
+			    toolbox: {
+			        show: true,
+			        orient: 'vertical',
+			        left: 'right',
+			        top: 'center',
+			        feature: {
+			            mark: {show: true},
+			            dataView: {show: true, readOnly: false},
+			            magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+			            restore: {show: true},
+			            saveAsImage: {show: true}
+			        }
+			    },
+			    calculable: true,
+			    xAxis: [
+			        {
+			            type: 'category',
+			            axisTick: {show: false},
+			            data: ['2012', '2013', '2014', '2015', '2016']
+			        }
+			    ],
+			    yAxis: [
+			        {
+			            type: 'value'
+			        }
+			    ],
+			    series: [
+			        {
+			            name: 'Forest',
+			            type: 'bar',
+			            barGap: 0,
+			            
+			            data: [320, 332, 301, 334, 390]
+			        },
+			        {
+			            name: 'Steppe',
+			            type: 'bar',
+			            
+			            data: [220, 182, 191, 234, 290]
+			        },
+			        {
+			            name: 'Desert',
+			            type: 'bar',
+			            
+			            data: [150, 232, 201, 154, 190]
+			        },
+			        {
+			            name: 'Wetland',
+			            type: 'bar',
+			           
+			            data: [98, 77, 101, 99, 40]
+			        }
+			    ]
+			};
         return (
             <div>
                 <Button type="primary" onClick={this.showModal.bind(this)}>Open</Button>
                 <Button type="primary" onClick={this.showModal1.bind(this)}>Personal</Button>
+                <BarReact option={op}/>
                 <Modal
                     title="表单"
                     visible={this.state.visible}
@@ -64,7 +133,21 @@ class HomeContainer extends React.Component{
                 >
                     
                         <Form data={data} value={(index)=>this.getvalue(index)} chu={chu} ref='form'/>
+                       <Map center={{lng: 116.402544, lat: 39.928216}} zoom="12">
+		            <Marker position={{lng: 116.402544, lat: 39.928216}} />
+		            <NavigationControl />
+		            <InfoWindow position={{lng: 116.402544, lat: 39.928216}} text="内容" title="标题"/>
+		        </Map> 
                 </Modal>
+                <Map center={{lng: 116.402544, lat: 39.928216}} zoom="12">
+		            <NavigationControl />
+		            <MapTypeControl />
+		            <ScaleControl />
+		            <OverviewMapControl />
+		             <Marker position={{lng: 116.402544, lat: 39.928216}} />
+		            <NavigationControl />
+		            <InfoWindow position={{lng: 116.402544, lat: 39.928216}} text="内容" title="标题"/>
+		        </Map>
             </div>
 
 
