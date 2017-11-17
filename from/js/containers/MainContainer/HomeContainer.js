@@ -5,14 +5,15 @@ import {hashHistory,Link} from "react-router"
 import Form from './Form'
 import BarReact from './BarReact'
 import {Map,Marker,InfoWindow, NavigationControl, MapTypeControl, ScaleControl, OverviewMapControl} from 'react-bmap'
-
+import Edit from './Logo'
+import './main.scss'
 var that=this
 class HomeContainer extends React.Component{
 	
     constructor (props){
         super(props)
         this.state={
-            visible:true,
+            visible:false,
             value:"2"
         }
     }
@@ -148,6 +149,10 @@ class HomeContainer extends React.Component{
 		            <NavigationControl />
 		            <InfoWindow position={{lng: 116.402544, lat: 39.928216}} text="内容" title="标题"/>
 		        </Map>
+		        <Edit/>
+		        <div className='scss'>
+		        	<div>scss</div>
+		        </div>
             </div>
 
 

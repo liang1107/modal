@@ -33,7 +33,8 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ },
       { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader') },
-      { test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=imgs/[name].[ext]' }
+      { test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=imgs/[name].[ext]' },
+      { test: /\.scss$/, loader: 'style!css!sass?sourceMap'}
     ]
   },
   resolve: {
