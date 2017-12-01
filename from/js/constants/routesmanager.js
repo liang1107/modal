@@ -40,7 +40,7 @@ import AnnualAssessment from '../containers/ThreeLevel/AnnualAssessment'
 import FeedbackInformation from "../containers/ThreeLevel/FeedbackInformation"
 import SupervisionObject from "../containers/ThreeLevel/SupervisionObject"
 
-
+import Web from '../containers/DataType/web.js'
 
 export default {
   path: '/',
@@ -82,7 +82,7 @@ export default {
     {path:'annualAssessment',component:AnnualAssessment},
     {path:'FeedbackInformation',component:FeedbackInformation},
     {path:'SupervisionObject',component:SupervisionObject},
-
+		{path:'web',component:web},
 
   ]
 }

@@ -124,6 +124,7 @@ class HomeContainer extends React.Component{
             <div>
                 <Button type="primary" onClick={this.showModal.bind(this)}>Open</Button>
                 <Button type="primary" onClick={this.showModal1.bind(this)}>Personal</Button>
+                <Button type="primary" onClick={this.showModal2.bind(this)}>页面跳转</Button>
                 <BarReact option={op}/>
                 <Modal
                     title="表单"
@@ -177,6 +178,10 @@ class HomeContainer extends React.Component{
     showModal1(){
     	const {router} =this.props
         router.push({pathname:"Personal",query:{wudi:"123"}})
+    }
+    showModal2(){
+    	 const {router} =this.props
+        router.push({pathname:"web"})
     }
     handleCancel(){
         console.log("关闭")
