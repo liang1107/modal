@@ -6,7 +6,7 @@ import Form from './Form'
 import BarReact from './BarReact'
 import {Map,Marker,InfoWindow, NavigationControl, MapTypeControl, ScaleControl, OverviewMapControl} from 'react-bmap'
 import Edit from './Logo'
-import './main.scss'
+// import './main.scss'
 var that=this
 class HomeContainer extends React.Component{
 	
