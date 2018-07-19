@@ -13,4 +13,4 @@ npm run build-dev
 
 <hr/>
 如果看不懂，请自行
-<a href='www.baidu.com'>百度</a>
+<a href='https://www.baidu.com' target="_blank" >百度</a>
