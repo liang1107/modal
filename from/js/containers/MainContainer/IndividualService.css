@@ -1,0 +1,27 @@
+
+
+.head{
+	height: 40px;line-height: 40px;font-size: 16px;
+	margin-left: 5%;
+}
+.main{
+	width: 90%;margin: 0 auto;
+}
+.main1{
+	height: 50px;padding:10px 0;width: 100%;
+}
+.floatL{
+	float: left;
+}
+.floatR{
+	float: right;margin-right: 10px;
+}
+.search{
+	position: relative;
+	
+}
+.search .ant-input-suffix{
+	position: absolute;
+	right: 5px;
+	top:0px;
+}
