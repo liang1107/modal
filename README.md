@@ -18,7 +18,7 @@ npm run build-dev
 
 
 <hr/>
-static文件夹是打包生成的文件。
+static文件夹是打包生成的文件。<br/>
 =======
 
 切换到分支上进行查看。
