@@ -16,6 +16,9 @@ npm run build-dev
 如果看不懂，请自行
 <a href='https://www.baidu.com' target="_blank" >百度</a>
 
+
+<hr/>
+static文件夹是打包生成的文件。
 =======
 
 切换到分支上进行查看。
