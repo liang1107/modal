@@ -5,8 +5,10 @@ class Baidu extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            baidu:"百度"
+            baidu:"百度",
+            arr:[]
         }
+
     }
     // getDefaultProps(){
     //     // 设置默认的props，也可以用dufaultProps设置组件的默认属性.
@@ -26,13 +28,23 @@ class Baidu extends React.Component{
         const {dispatch} = this.props;
         dispatch(registerAction());
         // 组件渲染之后调用，只调用一次。
+        this.setState({arr:[1,2,3,4,5,6]})
     }
     render(){
         // react最重要的步骤，创建虚拟dom，进行diff算法，更新dom树都在此进行。此时就不能更改state了。
         console.log("render")
         console.log(this.props.baidu)
+        
+        var srrstr =  this.state.arr.map((it)=>{
+          return  <div key={it} >{it}</div>
+        })
+        console.log(srrstr)
         return (
-            <input type='tetx' defaultValue={this.state.baidu} />
+            <div>
+                {srrstr}
+                <input type='tetx' defaultValue={this.state.baidu} />
+            </div>
+           
         )
     }
     componentDidMount(){
